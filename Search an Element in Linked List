@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* next;
+};
+int search(struct Node* head, int key) {
+    while (head != NULL) {
+        if (head->data == key)
+            return 1;
+        head = head->next;
+    }return 0;
+}
+int main() {
+    struct Node* head = malloc(sizeof(struct Node));
+    head->data = 5;
+    head->next = malloc(sizeof(struct Node));
+    head->next->data = 10;
+    head->next->next = malloc(sizeof(struct Node));
+    head->next->next->data = 15;
+    head->next->next->next = NULL;
+    int key = 10;
+    if (search(head, key))
+        printf("Element %d found.\n", key);
+    else
+        printf("Element %d not found.\n", key);
+
+    return 0;
+}
