@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char sentence[100] = "Apple is a premium brand";
+    char *pos = strstr(sentence, "Apple");
+    if (pos != NULL) 
+    {   strcpy(pos, "MSI");
+        strcat(sentence, " is a premium brand");
+    }  printf("Modified sentence: %s\n", sentence);
+    return 0;
+}
